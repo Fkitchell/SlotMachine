@@ -37,9 +37,7 @@ namespace SlotMachine
                 Thread.Sleep(400);
                 if (tokenCount < 1)
                 {
-                    Console.WriteLine("You need more tokens! \n" +
-                        "We'll happily sell you more - they are $10 each. \n" +
-                        "How many would you like to buy?");
+
                     
                     int tokenBought = (int)_slotMachineRepo.BuyToken(moneyWallet);
                     tokenCount += tokenBought;
@@ -128,6 +126,7 @@ namespace SlotMachine
 
                 if (tokenCount <= 0 && moneyWallet <= 9)
                 {
+                    Console.Clear();
                     Console.WriteLine("You have no more tokens and your wallet is empty!\n" +
                         "Tough day at the casino...");
                     Thread.Sleep(5000);

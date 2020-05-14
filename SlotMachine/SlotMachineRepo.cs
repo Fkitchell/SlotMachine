@@ -57,21 +57,30 @@ namespace SlotMachine
             }
         }
 
-        public double BuyToken(double moneyWallet, string input)
+        public double BuyToken(double moneyWallet)
         {
-
-                bool b = double.TryParse(input, out double tokenRequest);
+            double tokenRequest = 0;
             bool tokenRequestIsValid = true;
             while (tokenRequestIsValid)
             {
+                Console.WriteLine("You need more tokens! \n" +
+                   "We'll happily sell you more - they are $10 each. \n" +
+                   "How many would you like to buy?");
+                string input = Console.ReadLine();
+                bool b = double.TryParse(input, out tokenRequest);
+                int maxToken = (int)Math.Floor(moneyWallet / 10);
+
                 if (b && tokenRequest * 10 > moneyWallet)
                 {
-                    int maxToken = (int)Math.Floor(moneyWallet / 10);
                     Console.WriteLine($"Input a number less than {maxToken}.");
                 }
                 else if (b && tokenRequest * 10 <= moneyWallet)
                 {
                     tokenRequestIsValid = false;
+                }
+                else
+                {
+                    Console.WriteLine($"Please enter a number less than {maxToken}");
                 }
             }
             return tokenRequest;
