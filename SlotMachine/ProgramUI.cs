@@ -95,9 +95,16 @@ namespace SlotMachine
                 {
                     winnings += _slotMachineRepo.WinningsCalc(wheelOne, currentBet);
                 }
+                else if (wheelOne==wheelTwo || wheelOne==wheelThree )
+                {
+                    winnings += _slotMachineRepo.DoubleWinningsCalc(wheelOne, currentBet);
+                }
+                else if (wheelTwo == wheelThree)
+                {
+                    winnings += _slotMachineRepo.DoubleWinningsCalc(wheelTwo, currentBet);
+                }
 
                 moneyWallet += winnings;
-                //if wheelOne==wheelTwo || wheelOne==wheelThree || wheelTwo==WheelThree
                 //if wheelOne==wheelTwo && wheelOne==WheelThree
                 if (winnings == 0)
                 {
@@ -121,7 +128,7 @@ namespace SlotMachine
                 if (continueInput.ToLower() == "q")
                 {
                     Console.WriteLine($"Here are your final results! \n" +
-                        $"Total Winnings: {moneyWallet}.\n" +
+                        $"Total Winnings: ${moneyWallet}.\n" +
                         $"GoodBye!!");
                     Thread.Sleep(5000);
                     wantToPlay = false;

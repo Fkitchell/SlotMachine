@@ -20,21 +20,42 @@ namespace SlotMachine
             
         }
 
-        public int WinningsCalc(string wheel, double currentBet)
+        public int DoubleWinningsCalc(string wheel, double currentBet)
         {
             switch (wheel.ToLower())
             {
                 case "diamond":
                     //bet x 3 or ^3
-                    return (int)Math.Pow(currentBet * 2, 3);
+                    return (int)currentBet * 70;
                 case "  cherry  ":
-                    return (int)Math.Pow(currentBet * 2, 2);
+                    return (int)currentBet * 50;
                 //bet x 2 or ^2
                 case "   $   ":
                     //get your money back
-                    return (int)currentBet * 10;
+                    return (int)currentBet * 20;
                 case "  bar  ":
+                    return (int)currentBet * 10;
+                default:
+                    //too bad
                     return 0;
+            }
+        }
+
+        public int WinningsCalc(string wheel, double currentBet)
+        {
+            switch (wheel.ToLower())
+            {
+                case "diamond":
+                //bet x 3 or ^3
+                    return (int)currentBet * 150;
+                case "  cherry  ":
+                    return (int)currentBet * 75;
+                //bet x 2 or ^2
+                case "   $   ":
+                    //get your money back
+                    return (int)currentBet * 30;
+                case "  bar  ":
+                    return (int)currentBet * 20;
                 default:
                     //too bad
                     return 0;
