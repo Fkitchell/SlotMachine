@@ -71,6 +71,11 @@ namespace SlotMachine
                         Console.WriteLine($"You don't have enough tokens. Please enter a bet that is less than {tokenCount}");
                         Console.ReadKey();
                     }
+                    else
+                    {
+                        Console.WriteLine($"Please enter a valid bet less than {tokenCount}");
+                        Console.ReadKey();
+                    }
                 }
                 Console.Clear();
                 Console.WriteLine($"Tokens remaining: {tokenCount} | Current cash: ${moneyWallet}");
