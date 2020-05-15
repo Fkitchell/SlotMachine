@@ -117,6 +117,10 @@ namespace SlotMachine
                 string continueInput = Console.ReadLine();
                 if (continueInput.ToLower() == "q")
                 {
+                    Console.WriteLine($"Here are your final results! \n" +
+                        $"Total Winnings: {moneyWallet}.\n" +
+                        $"GoodBye!!");
+                    Thread.Sleep(5000);
                     wantToPlay = false;
                 }
                 else
