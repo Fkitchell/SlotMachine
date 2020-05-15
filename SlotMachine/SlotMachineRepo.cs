@@ -63,11 +63,11 @@ namespace SlotMachine
             bool tokenRequestIsValid = true;
             while (tokenRequestIsValid)
             {
-                Console.Clear();
                 Console.WriteLine("You need more tokens! \n" +
                    "We'll happily sell you more - they are $10 each. \n" +
                    "How many would you like to buy?");
                 string input = Console.ReadLine();
+                Console.Clear();
                 bool b = double.TryParse(input, out tokenRequest);
                 int maxToken = (int)Math.Floor(moneyWallet / 10);
 

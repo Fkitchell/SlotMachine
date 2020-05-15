@@ -37,8 +37,6 @@ namespace SlotMachine
                 Thread.Sleep(400);
                 if (tokenCount < 1)
                 {
-
-                    
                     int tokenBought = (int)_slotMachineRepo.BuyToken(moneyWallet);
                     tokenCount += tokenBought;
                     moneyWallet -= tokenBought * 10;
@@ -145,5 +143,3 @@ namespace SlotMachine
         }
     }
 }
-
-
