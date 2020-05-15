@@ -98,9 +98,9 @@ namespace SlotMachine
                 //if wheelOne==wheelTwo && wheelOne==WheelThree
                 if (winnings == 0)
                 {
-                    Console.WriteLine($"\n\n ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" +
-                        $"\n ░░░{wheelOne}░░░{wheelTwo}░░░{wheelThree}░░\n" +
-                        $" ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" +
+                    Console.WriteLine($"\n\n ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" +
+                        $"\n ░░░{wheelOne}░░░{wheelTwo}░░░{wheelThree}░░░\n" +
+                        $" ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" +
                         $"\n\n\nYou didn't win anything. Better luck next time!");
                 }
                 else

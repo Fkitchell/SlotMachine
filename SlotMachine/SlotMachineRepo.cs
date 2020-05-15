@@ -10,14 +10,14 @@ namespace SlotMachine
     public class SlotMachineRepo
     {
         readonly Random rand = new Random();
-        readonly string[] wheelOne = { " cherry ", "Diamond", "  Bar  ", "   $   ", };
+        readonly string[] wheelOne = { "cherry ", "Diamond", "  Bar  ", "   $   ", };
         public string SpinTheWheel()
         {
-            //int sleepTime = rand.Next(10);
-            //Thread.Sleep(sleepTime);
-            //int wheelIndex = rand.Next(wheelOne.Length);
-            //    wheelOne[wheelIndex];
-            return " cherry ";
+            int sleepTime = rand.Next(10);
+            Thread.Sleep(sleepTime);
+            int wheelIndex = rand.Next(wheelOne.Length);
+            return wheelOne[wheelIndex];
+            
         }
 
         public int WinningsCalc(string wheel, double currentBet)
