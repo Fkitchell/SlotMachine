@@ -113,7 +113,7 @@ namespace SlotMachine
 
 
                 Console.WriteLine($"Your new total is ${moneyWallet}.\n" +
-                    $"Type Q then enter to end the game, or any simply press enter to continue.");
+                    $"Type Q then enter to end the game, or simply press enter to continue.");
                 string continueInput = Console.ReadLine();
                 if (continueInput.ToLower() == "q")
                 {
